@@ -10,6 +10,7 @@ button{
     border: 0 round;
     font-size: 20;
     background-color: seagreen;
+    border-radius: 12px;
 }
 
 .animationStyle-enter-active{
