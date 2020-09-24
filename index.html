@@ -1,12 +1,35 @@
 <html>
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+    <link rel="stylesheet" href="someStyle.css">
 </head>
 <body>
-    
+    <h1>
     <div id="app">
         {{msg}}
     </div>    
+    </h1>
+
+    <div id="sth">
+        <input v-model.lazy="sth"><br>
+
+                
+                <transition-group name="flip" tag="ul">
+                    <li v-for="item in list" v-bind:key="item">
+                        {{item}}
+                    </li>
+                </transition-group>
+
+        <button v-on:click="add">Add</button>
+        <button v-on:click="remove">Remove</button>
+    </div>
+
+    <div id="ani">
+            <transition name="animationStyle">      
+            <p v-if="s" @click="s = !s" id="txt">Try to click here</p>
+            </transition>
+    </div>
 
     <script src="kelvin-vuedotjs.js"></script>
 </body>
