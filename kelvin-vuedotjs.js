@@ -1,4 +1,3 @@
-
 var app = new Vue({
     el: '#app',
     data: {
@@ -16,7 +15,8 @@ var something = new Vue({
              'potato'
         ],
         all: [1,2,3,4,5,6,7,8],
-        sth: 'carrot'
+        sth: 'carrot',
+        s:true
     },
     methods: {
         add: function(){
@@ -28,11 +28,12 @@ var something = new Vue({
         },
         remove: function(){
             this.list.length%2===0 ? this.list.pop() : this.list.shift();
+            this.shuffle()
         },
-
         shuffle: function(){
             this.list = _.shuffle(this.list);
-        }
+        },
+
     }
 })
 
