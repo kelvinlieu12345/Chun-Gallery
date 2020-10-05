@@ -1,3 +1,8 @@
+d3.select('body').append('svg').attr({
+    'width':300,
+    'height':300
+});
+d3.select('svg').append('circle').attr('cy', 50).attr('cx',50).attr('fill', 'blue').attr('r',30);
 var app = new Vue({
     el: '#app',
     data: {
