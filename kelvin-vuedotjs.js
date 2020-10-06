@@ -1,8 +1,32 @@
 d3.select('body').append('svg').attr({
-    'width':300,
-    'height':300
+    'width':3000,
+    'height':3000,
 });
-d3.select('svg').append('circle').attr('cy', 50).attr('cx',50).attr('fill', 'blue').attr('r',30);
+var theColor = 'blue';
+var svg = d3.select('svg');
+var x = 50;
+var y = 50;
+svg.append('rect').attr('width', 8).attr('height', 10).attr('fill', 'grey').attr('stroke', 'black');
+d3.select('svg').append('circle').attr('cy', y).attr('cx',x).attr('fill', theColor).attr('r',30)
+.on('dblclick', () => {
+    theColor = 'red';
+    d3.selectAll('circle').transition().attr('fill', theColor);
+}).on('click', () =>{
+    let y2 = 120;
+    let x2 = 150;
+    svg.selectAll('circle').transition().attr('cy', y2).duration(750).ease(d3.easeQuadIn)
+    .transition().attr('cx', x2).duration(10000).ease(d3.easeBounceOut).attr('fill', 'lightblue');
+});
+
+svg.select('rect').on('mousemove', () =>{
+    let x3 = 50;
+    let y3 = 30;
+    svg.selectAll('circle').transition().attr('cy', y3).attr('cx', x3).duration(1000).ease(d3.easeCircleIn);
+})
+
+;
+
+
 var app = new Vue({
     el: '#app',
     data: {
