@@ -16,7 +16,7 @@ d3.select('svg').append('circle').attr('cy', y).attr('cx',x).attr('fill', theCol
     let y2 = 120;
     let x2 = 150;
     svg.selectAll('circle').transition().attr('cy', y2).duration(750).ease(d3.easeQuadIn)
-    .transition().attr('cx', x2).duration(10000).ease(d3.easeBounceOut).attr('fill', 'lightblue');
+    .transition().attr('cx', x2).duration(10000).ease(d3.easeBounceOut).attr('fill', 'lightblue').remove();
 });
 
 svg.select('rect').on('mousemove', () =>{
